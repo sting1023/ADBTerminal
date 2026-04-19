@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.Dispatchers
@@ -87,7 +88,12 @@ fun ADBTerminalUI() {
             value = commandText,
             onValueChange = { commandText = it },
             modifier = Modifier.fillMaxWidth(),
-            placeholder = { Text("输入 ADB 命令，如: pm list packages", color = Color.Gray) },
+            placeholder = {
+                Text(
+                    text = "输入 ADB 命令，如: pm list packages",
+                    color = Color.Gray
+                )
+            },
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedTextColor = Color.White,
                 unfocusedTextColor = Color.White,
@@ -95,7 +101,7 @@ fun ADBTerminalUI() {
                 unfocusedBorderColor = Color.Gray,
                 cursorColor = Color(0xFF00FF00)
             ),
-            fontFamily = FontFamily.Monospace,
+            textStyle = TextStyle(fontFamily = FontFamily.Monospace),
             maxLines = 3
         )
 
