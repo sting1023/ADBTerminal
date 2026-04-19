@@ -1,7 +1,6 @@
 package com.sting.adbterminal
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -89,7 +88,7 @@ fun ADBTerminalUI() {
             onValueChange = { commandText = it },
             modifier = Modifier.fillMaxWidth(),
             placeholder = { Text("输入 ADB 命令，如: pm list packages", color = Color.Gray) },
-            colors = OutlinedTextFieldDefaults.colors(
+            colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedTextColor = Color.White,
                 unfocusedTextColor = Color.White,
                 focusedBorderColor = Color(0xFF00FF00),
